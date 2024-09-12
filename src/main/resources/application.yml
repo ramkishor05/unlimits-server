@@ -1,6 +1,43 @@
 # HTTP (Tomcat) port
+spring:
+   profiles:
+     active: local
+   application:
+     name: unlimits_client
 server:
-  port: 1111  
+  port: 1001 
+# Configure this Discovery Server
+eureka:
+  client: #Not a client
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+---
+spring:
+   profiles:
+     active: develop
+   application:
+     name: unlimits_client
+# HTTP (Tomcat) port
+server:
+  port: 1002  
+# Configure this Discovery Server
+eureka:
+  client: #Not a client
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+---
+spring:
+   profiles:
+     active: stage
+   application:
+     name: unlimits_client
+# HTTP (Tomcat) port
+server:
+  port: 1003  
 # Configure this Discovery Server
 eureka:
   client: #Not a client
