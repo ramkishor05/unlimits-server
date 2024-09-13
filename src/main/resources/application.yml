@@ -1,7 +1,8 @@
 # HTTP (Tomcat) port
 spring:
-   profiles:
-     active: local
+   config:
+     activate:
+        on-profile: local
    application:
      name: unlimits_client
 server:
@@ -15,8 +16,9 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka/
 ---
 spring:
-   profiles:
-     active: develop
+   config:
+     activate:
+        on-profile: develop
    application:
      name: unlimits_client
 # HTTP (Tomcat) port
@@ -31,8 +33,9 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka/
 ---
 spring:
-   profiles:
-     active: stage
+   config:
+     activate:
+        on-profile: stage
    application:
      name: unlimits_client
 # HTTP (Tomcat) port
